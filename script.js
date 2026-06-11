@@ -186,17 +186,39 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Simulate form submission
+        // Submit via AJAX
         const submitBtn = document.getElementById('submit-btn');
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled    = true;
 
-        setTimeout(() => {
-            showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-            form.reset();
+        const formData = new FormData(form);
+
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                showFormMessage(data.message, 'success');
+                form.reset();
+            } else {
+                showFormMessage(data.message || 'An error occurred. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Submission error:', error);
+            showFormMessage('Could not connect to the server. Please check your connection.', 'error');
+        })
+        .finally(() => {
             submitBtn.textContent = 'Send Message';
             submitBtn.disabled    = false;
-        }, 1500);
+        });
     });
 
     function isValidEmail(email) {
