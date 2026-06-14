@@ -4,326 +4,607 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio of Krishna Karthikeya Jeedigunta - Full Stack Developer skilled in HTML, CSS, JavaScript, PHP, React, Node.js and more.">
-    <title>Krishna Karthikeya Jeedigunta | Full Stack Developer</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <title>Krishna Karthikeya Jeedigunta | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7fc;
+            color: #333;
+        }
+
+        /* HEADER */
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+
+            background: linear-gradient(135deg,
+                    #4f46e5,
+                    #7c3aed);
+
+            color: white;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius: 30px;
+            transition: .3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #4f46e5;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: #111827;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #8b5cf6;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 50px;
+            color: #4f46e5;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* CARD */
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, .08);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 600;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, .08);
+
+            transition: .3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            background: #4f46e5;
+            color: white;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+            color: #4f46e5;
+        }
+
+        .project p {
+            line-height: 1.6;
+        }
+
+        /* ACHIEVEMENTS */
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 20px;
+        }
+
+        /* CONTACT */
+
+        .contact-form {
+            max-width: 700px;
+            margin: auto;
+
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, .08);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+
+            border: 1px solid #ccc;
+            border-radius: 8px;
+
+            font-size: 1rem;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+
+            border: none;
+
+            padding: 14px 30px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 1rem;
+
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #4338ca;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ============ NAVIGATION ============ -->
-    <header id="header">
-        <nav id="navbar">
-            <div class="nav-logo">
-                <a href="#hero">Krishna</a>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </nav>
+    <header>
+
+        <h1>Krishna Karthikeya Jeedigunta</h1>
+
+        <p>
+            Computer Science Engineer |
+            AI & ML Enthusiast |
+            Full Stack Developer
+        </p>
+
+        <div class="social-links">
+
+            <a href="mailto:yourmail@gmail.com">
+                Email
+            </a>
+
+            <a href="https://www.linkedin.com/in/krishna-karthikeya-jeedigunta-16972931a/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="#">
+                GitHub
+            </a>
+
+            <a href="#">
+                LeetCode
+            </a>
+
+        </div>
+
     </header>
 
-    <!-- ============ HERO SECTION ============ -->
-    <section id="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Krishna Karthikeya Jeedigunta</h1>
-                <p class="hero-title">Full Stack Developer</p>
-                <p class="hero-description">
-                    I build modern, responsive web applications with clean code and creative solutions.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="profile.jpg" alt="Krishna Karthikeya Jeedigunta" id="profile-photo">
-            </div>
-        </div>
-    </section>
+    <nav>
 
-    <!-- ============ ABOUT SECTION ============ -->
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
     <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="profile.jpg" alt="Krishna Karthikeya Jeedigunta">
-                </div>
-                <div class="about-text">
-                    <p>
-                        I am a passionate Full Stack Developer with a keen interest in building
-                        dynamic and responsive web applications. I enjoy turning complex problems
-                        into simple, beautiful, and intuitive solutions.
-                    </p>
-                    <p>
-                        Currently pursuing my studies and internship in Full Stack Development with PHP,
-                        I am always eager to learn new technologies and improve my craft.
-                    </p>
-                    <div class="about-info">
-                        <div class="info-item">
-                            <span class="info-label">Name:</span>
-                            <span class="info-value">Krishna Karthikeya Jeedigunta</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Role:</span>
-                            <span class="info-value">Full Stack Developer</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location:</span>
-                            <span class="info-value">India</span>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                </div>
-            </div>
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+
+                Passionate Computer Science Engineering student specializing
+                in Artificial Intelligence and Machine Learning.
+
+                Experienced in developing intelligent systems,
+                real-time web applications, and secure backend services.
+
+                Strong foundation in Data Structures, Algorithms,
+                Machine Learning, Full Stack Development, and Cloud Technologies.
+
+                Always eager to learn emerging technologies and solve
+                real-world problems through innovation.
+
+            </p>
+
         </div>
+
     </section>
 
-    <!-- ============ SKILLS SECTION ============ -->
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="card education-card">
+
+            <h3>B.Tech – Computer Science Engineering (AI & ML)</h3>
+
+            <br>
+
+            <p><strong>Institution:</strong> JNTU Kakinada</p>
+
+            <p><strong>CGPA:</strong> 7.9</p>
+
+            <p><strong>Expected Graduation:</strong> 2027</p>
+
+        </div>
+
+    </section>
+
     <section id="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">
 
-                <div class="skill-card" id="skill-html">
-                    <div class="skill-icon">&#60;/&#62;</div>
-                    <h3 class="skill-name">HTML</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                </div>
+        <h2 class="section-title">Technical Skills</h2>
 
-                <div class="skill-card" id="skill-css">
-                    <div class="skill-icon">&#123;&#125;</div>
-                    <h3 class="skill-name">CSS</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
+        <div class="skills-grid">
 
-                <div class="skill-card" id="skill-javascript">
-                    <div class="skill-icon">JS</div>
-                    <h3 class="skill-name">JavaScript</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                </div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C</div>
 
-                <div class="skill-card" id="skill-mysql">
-                    <div class="skill-icon">DB</div>
-                    <h3 class="skill-name">MySQL</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                </div>
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">React.js</div>
+            <div class="skill">Node.js</div>
 
-                <div class="skill-card" id="skill-python">
-                    <div class="skill-icon">Py</div>
-                    <h3 class="skill-name">Python</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                </div>
+            <div class="skill">Express.js</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">SQL</div>
 
-                <div class="skill-card" id="skill-java">
-                    <div class="skill-icon">Jv</div>
-                    <h3 class="skill-name">Java</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                </div>
+            <div class="skill">TensorFlow</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">Scikit-Learn</div>
 
-                <div class="skill-card" id="skill-c">
-                    <div class="skill-icon">C</div>
-                    <h3 class="skill-name">C</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
-                    </div>
-                </div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">Docker</div>
 
-                <div class="skill-card" id="skill-react">
-                    <div class="skill-icon">Re</div>
-                    <h3 class="skill-name">React</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" id="skill-nodejs">
-                    <div class="skill-icon">No</div>
-                    <h3 class="skill-name">Node.js</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" id="skill-git">
-                    <div class="skill-icon">Gt</div>
-                    <h3 class="skill-name">Git</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                </div>
-
-            </div>
         </div>
+
     </section>
 
-    <!-- ============ PROJECTS SECTION ============ -->
     <section id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
 
-                <div class="project-card" id="project-1">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250?text=Project+1" alt="Project One">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-name">Project One</h3>
-                        <p class="project-description">
-                            A responsive web application built with HTML, CSS, and JavaScript.
-                            Features modern UI design and interactive elements.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+        <h2 class="section-title">Projects</h2>
 
-                <div class="project-card" id="project-2">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project Two">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-name">Project Two</h3>
-                        <p class="project-description">
-                            A full-stack application with database integration using MySQL
-                            and a Node.js backend for server-side logic.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">React</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="projects-grid">
 
-                <div class="project-card" id="project-3">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project Three">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-name">Project Three</h3>
-                        <p class="project-description">
-                            A Python-based automation tool that streamlines repetitive tasks
-                            and integrates with third-party APIs.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Git</span>
-                            <span class="tech-tag">API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="card project">
+
+                <h3>YapHub – Real-Time Chat Platform</h3>
+
+                <p>
+
+                    Built a full-stack chat application using
+                    React, Node.js, Socket.io and MongoDB.
+
+                    Implemented JWT authentication,
+                    dynamic message updates,
+                    and secure communication channels.
+
+                </p>
 
             </div>
+
+            <div class="card project">
+
+                <h3>AI Image Intelligence Classifier</h3>
+
+                <p>
+
+                    Developed a CNN-based image classifier using
+                    Python, TensorFlow and deep learning techniques.
+
+                    Utilized data augmentation and dropout layers
+                    for improved accuracy and generalization.
+
+                </p>
+
+            </div>
+
+            <div class="card project">
+
+                <h3>SecureAuth System</h3>
+
+                <p>
+
+                    Designed a secure user authentication system
+                    using Node.js, Express.js and CSS Grid.
+
+                    Implemented encrypted backend services
+                    for secure data handling.
+
+                </p>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- ============ CONTACT SECTION ============ -->
+    <section id="certifications">
+
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="projects-grid">
+
+            <div class="card">
+
+                <h3>NPTEL Certifications</h3>
+
+                <p>
+                    Completed 5 National-Level Certifications
+                    in core Computer Science domains.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>AI & Generative AI Training</h3>
+
+                <p>
+                    Professional training in AI Ethics and
+                    Generative AI Fundamentals.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Core CS Coursework</h3>
+
+                <p>
+                    Algorithms, DBMS, Operating Systems,
+                    Theory of Computation and Machine Learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="achievements">
+
+        <h2 class="section-title">Achievements</h2>
+
+        <div class="achievement-grid">
+
+            <div class="card">
+
+                <h3>LeetCode</h3>
+
+                <p>
+                    Solved 150+ coding problems focusing on
+                    algorithmic thinking and problem-solving.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Technical Quiz Winner</h3>
+
+                <p>
+                    Won a Campus-Level Technical Quiz at JNTUK,
+                    showcasing strong CS fundamentals.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Public Speaking</h3>
+
+                <p>
+                    Delivered technical presentations and
+                    effectively communicated complex concepts.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>WCA Participant</h3>
+
+                <p>
+                    Active participant in World Cube Association
+                    competitions demonstrating analytical thinking.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item" id="contact-email">
-                        <span class="contact-icon">&#9993;</span>
-                        <div>
-                            <h3>Email</h3>
-                            <p>kkjeedigunta@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item" id="contact-phone">
-                        <span class="contact-icon">&#9742;</span>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91 97051 28396</p>
-                        </div>
-                    </div>
-                    <div class="contact-item" id="contact-location">
-                        <span class="contact-icon">&#9906;</span>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Kakinada,Andhra Pradesh,India</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Kakashi-hatake1105#" class="social-link" id="social-github"
-                            aria-label="GitHub">GitHub</a>
-                        <a href="https://in.linkedin.com/in/krishna-karthikeya-jeedigunta-16972931a" class="social-link"
-                            id="social-linkedin" aria-label="LinkedIn">LinkedIn</a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Write your message..."
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
-                </form>
-            </div>
-        </div>
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <form class="contact-form" id="contactForm">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea rows="6" placeholder="Your Message" required>
+</textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
     </section>
 
-    <!-- ============ FOOTER ============ -->
-    <footer id="footer">
-        <div class="container">
-            <p>&copy; 2026 Krishna Karthikeya Jeedigunta. All Rights Reserved.</p>
-        </div>
+    <footer>
+
+        <p>
+            © 2026 Krishna Karthikeya Jeedigunta.
+            All Rights Reserved.
+        </p>
+
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                alert(
+                    "Thank you for reaching out!"
+                );
+
+            });
+
+    </script>
+
 </body>
 
 </html>
